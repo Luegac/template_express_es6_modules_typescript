@@ -8,8 +8,6 @@ import express, {
 import path from "path";
 import { fileURLToPath } from "url";
 import indexRouter from "./routes/index.js";
-import usersRouter from "./routes/users.js";
-import moviesRouter from "./routes/movies.js";
 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
 
@@ -29,8 +27,6 @@ app.use(express.static(path.join(process.cwd(), "public")));
 
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/movies", moviesRouter);
 
 app.get("/info", (_req: Request, res: Response) => {
     res.json({
